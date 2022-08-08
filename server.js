@@ -26,7 +26,7 @@ const requestListener = (req, res) =>{
     } else if (req.method != 'GET'){
         res.writeHead(405);
         res.end('HTTP method not allowed');
-    } else if(filenames === false){
+    } else if(filenames.toString() === ''){
         res.writeHead(500);
         res.end('Internal server error');
     } else if(req.url === '/get'){
